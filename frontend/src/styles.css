@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f2f2f2;
+  color: #252525;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  min-height: 40px;
+  padding: 7px 16px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: #eeeeee;
+  color: #252525;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #dddddd;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 3px solid #235b94;
+  outline-offset: 3px;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 25px;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+p {
+  margin: 8px 0 16px;
+}
+
+.login-wrap {
+  padding: 70px 16px;
+}
+
+.login-card {
+  max-width: 420px;
+  margin: auto;
+  padding: 28px;
+  background: white;
+  border: 1px solid #bbbbbb;
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+  margin: 16px 0 5px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  display: block;
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #999999;
+  border-radius: 3px;
+  background: white;
+  color: #252525;
+}
+
+textarea {
+  min-height: 130px;
+  resize: none;
+}
+
+.primary {
+  margin-top: 18px;
+  background: #285e8e;
+  border-color: #285e8e;
+  color: white;
+}
+
+.primary:hover {
+  background: #204c73;
+}
+
+.full {
+  width: 100%;
+}
+
+.hint, .muted, .notice {
+  color: #555555;
+  font-size: 14px;
+}
+
+.hint {
+  margin: 22px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 16px 24px;
+  background: #285e8e;
+  color: white;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.container {
+  max-width: 1050px;
+  margin: 28px auto;
+  padding: 0 18px;
+}
+
+.page-heading {
+  margin-bottom: 20px;
+}
+
+.content-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.panel {
+  min-width: 0;
+  padding: 22px;
+  background: white;
+  border: 1px solid #bbbbbb;
+  border-radius: 4px;
+}
+
+.panel form {
+  max-width: 560px;
+}
+
+.panel form .full {
+  width: auto;
+}
+
+.notice {
+  margin: 18px 0 0;
+}
+
+.table-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  vertical-align: top;
+}
+
+th {
+  background: #eeeeee;
+}
+
+td:nth-child(2) {
+  min-width: 180px;
+  overflow-wrap: anywhere;
+}
+
+td small {
+  display: block;
+  color: #555555;
+}
+
+.status {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.abierta {
+  color: #805000;
+}
+
+.cerrada {
+  color: #256331;
+}
+
+.alert {
+  padding: 12px;
+  border: 1px solid;
+}
+
+.error {
+  color: #922323;
+  background: #fff0f0;
+}
+
+.success {
+  color: #256331;
+  background: #edf7ed;
+}
+
+.empty {
+  padding: 16px 0;
+  color: #555555;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .login-wrap {
+    padding-top: 30px;
+  }
+
+  .login-card, .panel {
+    padding: 18px;
+  }
+
+  .topbar {
+    padding: 16px;
+  }
+
+  .user-info {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .table-head {
+    flex-wrap: wrap;
+  }
+}
