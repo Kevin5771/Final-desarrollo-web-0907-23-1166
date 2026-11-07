@@ -1,0 +1,12 @@
+node_modules/
+.env
+.DS_Store
+backend/data/*.sqlite
+backend/data/*.sqlite-*
+frontend/dist/
+
+# Configuracion local de herramientas
+.codex*/
+.cursor/
+.agents/
+.claude/

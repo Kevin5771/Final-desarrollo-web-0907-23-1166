@@ -1,0 +1,14 @@
+const { Router } = require('express');
+const auth = require('../controllers/auth.controller');
+const equipos = require('../controllers/equipo.controller');
+const incidencias = require('../controllers/incidencia.controller');
+const verificarSesion = require('../middlewares/verificarSesion');
+const router = Router();
+router.get('/sesion', auth.sesion);
+router.post('/login', auth.login);
+router.post('/logout', auth.logout);
+router.get('/equipos', verificarSesion, equipos.listar);
+router.get('/incidencias', verificarSesion, incidencias.listar);
+router.post('/incidencias', verificarSesion, incidencias.registrar);
+router.patch('/incidencias/:id/cerrar', verificarSesion, incidencias.cerrar);
+module.exports = router;
