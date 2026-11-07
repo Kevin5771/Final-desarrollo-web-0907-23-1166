@@ -26,6 +26,10 @@ La IA me ayudó a realizar pruebas en mi API, creando tests para verificar que l
 
 ## c) Qué hizo mal la IA y cómo lo corregí
 
-Al revisar el código se encontró que el backend sí comprueba quién intenta cerrar la incidencia y devuelve 403 si no es el creador ni un técnico. La revisión de sintaxis del backend pasó, pero todavía falta ejecutar la aplicación y comprobar el registro, el cierre y la sesión con las tres cuentas de prueba.
+En la revisión con apoyo de IA se encontró un caso que la implementación inicial no manejaba: una sesión podía vencer mientras el usuario tenía abierto el panel. El backend rechazaba la siguiente operación con un 401, pero el frontend solo mostraba el error y mantenía la pantalla de un usuario autenticado.
+
+El problema se identificó revisando `api.js` y `App.jsx`: el cliente convertía las respuestas fallidas en errores de texto, sin avisar al componente que controla la sesión. Se corrigió haciendo que una respuesta 401 dispare un evento de sesión vencida y que `App` borre el usuario para volver al inicio de sesión. El 401 de un intento de login incorrecto queda fuera de ese evento, porque debe mostrar el error de credenciales en el formulario.
+
+Este caso mostró que comprobar permisos en el servidor no basta para manejar correctamente la sesión en la interfaz. La corrección se realizó durante esta revisión; no corresponde a una prueba manual anterior. La comprobación completa en el navegador sigue pendiente.
 
 

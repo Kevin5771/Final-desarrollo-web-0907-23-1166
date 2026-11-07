@@ -134,6 +134,11 @@ export default function App() {
   const [usuario, setUsuario] = useState(null);
   const [verificando, setVerificando] = useState(true);
   useEffect(() => {
+    const volverAlLogin = () => setUsuario(null);
+    window.addEventListener('sesion-vencida', volverAlLogin);
+    return () => window.removeEventListener('sesion-vencida', volverAlLogin);
+  }, []);
+  useEffect(() => {
     api('/api/sesion')
       .then(data => { if (data.autenticado) setUsuario(data.usuario); })
       .catch(() => {})

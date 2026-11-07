@@ -13,6 +13,9 @@ export async function api(ruta, { method = 'GET', body } = {}) {
     throw new Error('No se pudo conectar con el servidor. Comprueba que esté encendido.');
   }
   const data = await response.json().catch(() => ({}));
+  if (response.status === 401 && ruta !== '/api/login') {
+    window.dispatchEvent(new Event('sesion-vencida'));
+  }
   if (!response.ok) throw new Error(data.error || 'Solicitud fallida.');
   return data;
 }
