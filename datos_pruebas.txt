@@ -1,0 +1,4 @@
+Rol	Correo	Contraseña
+Usuario	usuario@lab.local	Usuario123!
+Otro usuario	otro@lab.local	Otro123!
+Técnico	tecnico@lab.local	Tecnico123!
