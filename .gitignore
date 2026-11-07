@@ -5,8 +5,3 @@ backend/data/*.sqlite
 backend/data/*.sqlite-*
 frontend/dist/
 
-# Configuracion local de herramientas
-.codex*/
-.cursor/
-.agents/
-.claude/
